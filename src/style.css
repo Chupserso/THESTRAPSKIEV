@@ -1,0 +1,432 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+.addcomment {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0.97;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.addcomment div form input {
+    display: block;
+    margin: 0 auto;
+}
+.addcomment div form {
+    line-height: 1px;
+}
+.addcomment textarea {
+    width: 300px;
+    height: 100px;
+    color: black;
+    border: none;
+}
+.addcomment input {
+    width: 300px;
+    height: 30px;
+    border: none;
+}
+body {
+    background: black;
+}
+.hat {
+    width: 100%;
+    height: 180px;
+    border-bottom: 1px solid white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.insta {
+    width: 40px;
+    height: 40px;
+}
+.hat div {
+    width: 185px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.content {
+    display: block;
+    margin: 30px auto;
+    max-width: 920px;
+    font-style: 20px;
+    color: white;
+    border: 1px solid white;
+    padding: 12px 12px 12px 12px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+#wimg1 {
+    width: 950px;
+    height: 700px;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+#wimg2 {
+    width: 950px;
+    height: 700px;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+#wimg3 {
+    width: 950px;
+    height: 700px;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+#wimg4 {
+    width: 950px;
+    height: 700px;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+#wimg5 {
+    width: 950px;
+    height: 700px;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+#wimg6 {
+    width: 950px;
+    height: 700px;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+.comments_block {
+    width: 920px;
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
+    background: white;
+    margin: 30px auto;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+.comment_block h2 {
+    color: black;
+    font-size: 20px;
+}
+.comment_block {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+.addCommentBtn {
+    width: 400px;
+    height: 40px;
+    background: green;
+    border-radius: 5px;
+    border: none;
+    color: white;
+}
+.addCommentBtn:hover {
+    background: darkgreen;
+    cursor: pointer;
+    transition: 1s all;
+}
+.buy {
+    width: 400px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background: green;
+    color: white;
+}
+.buy:hover {
+    background: darkgreen;
+    cursor: pointer;
+    transition: 1s all;
+}
+.buyblock {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0.97;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.buyblock div form input {
+    display: block;
+    margin: 0 auto;
+}
+.buyblock div form {
+    line-height: 1px;
+}
+.buyblock input {
+    width: 300px;
+    height: 30px;
+    border: none;
+}
+.addCommentBtn {
+    margin-bottom: 10px;
+}
+.img {
+    border-radius: 10px 10px 0 0;
+    width: 297px;
+    height: 295px;
+}
+.portfolio {
+    display: flex;
+    justify-content: center;
+}
+.img_wrapper {
+    max-width: 950px;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 950px;
+}
+.img_block1 {
+    max-width: 950px;
+    display: flex;
+    justify-content: space-between;
+}
+.img_block2 {
+    max-width: 950px;
+    display: flex;
+    justify-content: space-between;
+}
+#text {
+    background: #605e62;
+    color: white;
+    width: 277px;
+    padding: 10px;
+    text-align: center;
+    max-width: 100%;
+    border-radius: 0px 0px 10px 10px                                                                                                                                                ;
+}
+.img_item {
+    margin-bottom: 30px;
+}
+.order {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer {
+    margin-top: 30px;
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #545151;
+}
+.footer .footer_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+body {
+    z-index: 1;
+}
+#cursor {
+    z-index: -100;   
+}
+@media screen and (max-width:992px) {
+    .img_block1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .img_block2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #wimg1 {
+        width: 768px;
+        height: 600px;
+    }
+    #wimg2 {
+        width: 768px;
+        height: 600px;
+    }
+    #wimg3 {
+        width: 768px;
+        height: 600px;
+    }
+    #wimg4 {
+        width: 768px;
+        height: 600px;
+    }
+    #wimg5 {
+        width: 768px;
+        height: 600px;
+    }
+    #wimg6 {
+        width: 768px;
+        height: 600px;
+    }
+    .comments_block {
+        width: 738px;
+    }
+    .content {
+        width: 738px;
+    }
+    .img {
+        width: 768px;
+        height: 600px;
+    }
+    #text {
+        width: 748px;
+    }
+}
+@media screen and (max-width:576px) {
+    #wimg1 {
+        width: 300px;
+        height: 222px;
+    }
+    #wimg2 {
+        width: 300px;
+        height: 222px;
+    }
+    #wimg3 {
+        width: 300px;
+        height: 222px;
+    }
+    #wimg4 {
+        width: 300px;
+        height: 222px;
+    }
+    #wimg5 {
+        width: 300px;
+        height: 222px;
+    }
+    #wimg6 {
+        width: 300px;
+        height: 222px;
+    }
+    .comments_block {
+        width: 546px;
+    }
+    .content {
+        width: 546px;
+    }
+    .img {
+        width: 576px;
+        height: 498px;
+    }
+    #text {
+        width: 556px;
+    }
+}
+@media screen and (max-width:768px) {
+    #wimg1 {
+        width: 576px;
+        height: 498px;
+    }
+    #wimg2 {
+        width: 576px;
+        height: 498px;
+    }
+    #wimg3 {
+        width: 576px;
+        height: 498px;
+    }
+    #wimg4 {
+        width: 576px;
+        height: 498px;
+    }
+    #wimg5 {
+        width: 576px;
+        height: 498px;
+    }
+    #wimg6 {
+        width: 576px;
+        height: 498px;
+    }
+    .comments_block {
+        width: 546px;
+    }
+    .content {
+        width: 546px;
+    }
+    .img {
+        width: 576px;
+        height: 498px;
+    }
+    #text {
+        width: 556px;
+    }
+}
+@media screen and (max-width:576px) {
+    .content {
+        width: 315px;
+    }
+    .img {
+        width: 320px;
+        height: 320px;
+    }
+    #text {
+        width: 300px;
+    }
+    #wimg1 {
+        width: 320px;
+        height: 320px;
+    }
+    #wimg2 {
+        width: 320px;
+        height: 320px;
+    }
+    #wimg3 {
+        width: 320px;
+        height: 320px;
+    }
+    #wimg4 {
+        width: 320px;
+        height: 320px;
+    }
+    #wimg5 {
+        width: 320px;
+        height: 320px;
+    }
+    #wimg6 {
+        width: 320px;
+        height: 320px;
+    }
+    .buy {
+        width: 320px;
+    }
+    .comments_block {
+        display: block;
+        width: 290px;
+    }
+    .addCommentBtn {
+        width: 190px;
+    }
+}
+@media screen and (max-width:400px) {
+    .hat {
+        display: flex;
+        flex-direction: column;
+        height: 225px;
+    }
+}
