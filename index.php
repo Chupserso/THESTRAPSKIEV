@@ -135,12 +135,7 @@
             </form>
         </div>
     </section>
-    <section class="footer">
-        <div class="footer_wrapper">
-            <div><a href="https://www.instagram.com/thestrapskiev/"><img class="insta" style="margin-bottom: 5px;" src="img/insta.png" alt="insta"></a></div>
-            <div><a href="tel:+380938579472" style="color: white;font-size: 20px;">+380938579472</a></div>
-        </div>
-    </section>
+
     <?php
     if (isset($_POST["buyBtn"])) {
         $name = $_POST["name"];
