@@ -1,5 +1,14 @@
 <?php
-    $connect = new mysqli("localhost", "root", "root", "thestrapskiev");
+    $connect = new mysqli("localhost", "chupse1x_straps", "Xr10Xr10", "chupse1x_straps");
+    if (isset($_POST["buyBtn"])) {
+        $name = $_POST["name"];
+        $number = $_POST["number"];
+        setcookie("number", '', time()-1000);
+        setcookie("number", $number);
+        $textOrder = $_POST["text"];
+        $connect->query("INSERT INTO orders (name, number, text) VALUES ('$name', '$number', '$textOrder')");
+        header('Location: src/thanks.php');
+    }
     if ($connect->connect_error == true) {
         echo "<script>console.log(0)</script>";
     } else {
@@ -13,7 +22,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="src/main.css">
     <title>THESTRAPSKIEV</title>
 </head>
 <body>
@@ -25,10 +34,10 @@
     }
     ?>
     <section class="hat">
-        <div>
-            <img src="img/logotype.jpg" alt="logotype" class="logotype" style="border-radius: 100%;width: 170px;height: 170px;">
+        <div class="logo">
+            <img src="img/logotype.png" alt="logotype" class="logotype" style="width: 140px;height: 140px;">
         </div>
-        <div>
+        <div class="info_hat">
             <a href="https://www.instagram.com/thestrapskiev/"><img class="insta" src="img/insta.png" alt="insta"></a>
             <a href="tel:+380938579472" style="color: white;font-size: 20px;">+380938579472</a>
         </div>
@@ -44,7 +53,7 @@
                         <img src="img/w1.jpg" alt="w" id="img1" class="img">
                     </div>
                     <div id="text">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis eveniet, optio molestias quis quas sunt aperiam reiciendis itaque sed eius facilis impedit eaque tenetur voluptatibus sint est fugiat suscipit aut.
+                        Красный кожаный ремешок выполнен из натуральной кожи crazy horse , структура цельный с прошивкой жёлтой нитью итальянского производства для спортивного хронографа Ferrari .
                     </div>
                 </div>
                 <div class="img_item">
@@ -52,7 +61,7 @@
                         <img src="img/w2.jpg" alt="w" id="img1" class="img">
                     </div>
                     <div id="text">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis eveniet, optio molestias quis quas sunt aperiam reiciendis itaque sed eius facilis impedit eaque tenetur voluptatibus sint est fugiat suscipit aut.
+                        Коричневые ремешки из кожи крока, болотный и коричневый цвета, для модели часов Breitling.                         
                     </div>
                 </div>
                 <div class="img_item">
@@ -60,7 +69,7 @@
                         <img src="img/w3.jpg" alt="w" id="img1" class="img">
                     </div>
                     <div id="text">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis eveniet, optio molestias quis quas sunt aperiam reiciendis itaque sed eius facilis impedit eaque tenetur voluptatibus sint est fugiat suscipit aut.
+                        Модель ремешка Pilot aviator, выполнена из кожи натурального дубления специально для действующего пилота авиации Украины.
                     </div>
                 </div>
             </div>
@@ -69,8 +78,8 @@
                     <div>
                         <img src="img/w4.jpg" alt="w" id="img2" class="img">
                     </div>
-                    <div id="text">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis eveniet, optio molestias quis quas sunt aperiam reiciendis itaque sed eius facilis impedit eaque tenetur voluptatibus sint est fugiat suscipit aut.
+                    <div id="text" style="height:240px;">
+                        Коллекция ремешков diver с крупной перфорацией кожи для уменьшения веса ремешка и сопротивления при давления на глубине, использована специальная кожа с пропиткой strong rubber , что позволяет коже быть полностью непромокаемой и износоустойчивой , данный и уникальный вид кожи имеет меньше вес обычной кожи растительного дубления и наиболее устойчив к перемене температур и влаги.
                     </div>
                 </div>
                 <div class="img_item">
@@ -78,7 +87,7 @@
                         <img src="img/w5.jpg" alt="w" id="img2" class="img">
                     </div>
                     <div id="text">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis eveniet, optio molestias quis quas sunt aperiam reiciendis itaque sed eius facilis impedit eaque tenetur voluptatibus sint est fugiat suscipit aut.
+                        Ремешок для apple watch выполнен из кожи крока в оранжевом спортивном стиле высочайшего качества , лимитированная коллекция.
                     </div>
                 </div>
                 <div class="img_item">
@@ -86,7 +95,7 @@
                         <img src="img/w6.jpg" alt="w" id="img2" class="img">
                     </div>
                     <div id="text">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis eveniet, optio molestias quis quas sunt aperiam reiciendis itaque sed eius facilis impedit eaque tenetur voluptatibus sint est fugiat suscipit aut.
+                        Ремешок для apple watch выполнен из кожи grey crazy horse в винтажном  спортивном стиле
                     </div>
                 </div>
             </div>
@@ -99,7 +108,18 @@
     <div><img src="img/w5.jpg" alt="w" class="wimg" id="wimg5"></div>
     <div><img src="img/w6.jpg" alt="w" class="wimg" id="wimg6"></div>
     <section class="order">
-        <button class="buy" onclick="buyBtn(this)">Заказать</button>
+        <form action="#" class="orderform" method="POST">
+            <input type="text" name="name" id="name" placeholder="Ваше имя:" required>
+            <br><input type="number" name="number" id="number" placeholder="Ваш номер:" required>
+            <br><textarea name="text" id="textar" placeholder="Опишите ваш заказ"></textarea>
+            <br><input type="submit" name="buyBtn" value="Заказать" class="buy" onclick="buyBtn(this)" style="
+                background: #e3992b;
+                color: white;
+                font-weight: 700;
+                text-transform: uppercase;
+                font-size: 20px;
+            ">
+        </form>
     </section>
     <section class="comments_block" style="align-items:flex-start;padding-bottom:15px;">
         <button class="addCommentBtn" onclick="addCommentBtn(this)" style="display:block;margin:0 auto;">Добавить отзыв</button>
@@ -123,31 +143,88 @@
             </form>
         </div>
     </section>
-    <section class="buyblock">
-        <div>
-            <form action="#" method="POST">
-                <input type="text" name="name" placeholder="Имя" required>
-                <br><input type="tel" name="number" placeholder="Телефон" required>
-                <br><textarea name="text" placeholder="Описание заказа" style="width: 300px;height: 100px;color: black;border: none;"></textarea>
-                <br>
-                <input type="submit" name="buyBtn" class="buyBtn" value="Отправить" style="cursor:pointer;background: green; color: white;border: none;margin-top: 1px;">
-                <button onclick="escapeBtn(this)" class="escapeBtn" style="cursor:pointer;background: red; color: white;border: none;margin-top: 1px;width: 300px;height: 30px;">X</button>
-            </form>
+    <section class="footer">
+        <div class="footer_wrapper">
+            <div class="footer_logo">
+                <img src="img/logotype.png" alt="logo" class="logotype" style="width: 140px;height: 140px;">
+            </div>
+            <div class="info_foot" style="display:flex;align-items: center;">
+                <div><a href="https://www.instagram.com/thestrapskiev/"><img class="insta" style="margin-bottom: 5px;" src="img/insta.png" alt="insta"></a></div>
+                <div><a href="tel:+380938579472" style="color: white;font-size: 20px;margin-left:10px;">+380938579472</a></div>
+            </div>
         </div>
     </section>
-
-    <?php
-    if (isset($_POST["buyBtn"])) {
-        $name = $_POST["name"];
-        $number = $_POST["number"];
-        $textOrder = $_POST["text"];
-        $connect->query("INSERT INTO orders (name, number, text) VALUES ('$name', '$number', '$textOrder')");
+    <style>
+    #text {
+        min-height: 120px;
     }
-    ?>
+    .footer {
+        background: url("img/backdown.jpg") center center/cover no-repeat;
+        background-position: center center;
+        border-top: 1px solid white;
+        z-index: -2;
+    }
+    @media screen and (max-width:1095px) {
+        .hat .logo {
+            width: 140px;
+            border-radius: 100%;
+            padding: 15px;
+            background: black;
+        }
+        .info_hat {
+            background: black;
+            border-radius: 10px;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        .footer_logo {
+            border-radius: 100%;
+            padding: 10px;
+            width: 140px;
+            background: black;
+        }
+        .info_foot {
+            background: black;
+            padding: 8px;
+            border-radius: 10px;
+        }
+    }
+    @media screen and (max-width:400px) {
+        .footer .footer_wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 70px;
+        }
+        .info_hat {
+            padding: 10px;
+        }
+        .hat {
+            padding: 0 50px;
+            height: 240px;
+        }
+        .footer {
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .footer_logo {
+            padding: 10px;
+        }
+        .info_foot {
+            padding: 10px;
+            margin-top: 20px;
+        }
+    }
+    .hat {
+        background: url("img/topback.jpg") center center/cover no-repeat;
+    }
+    </style>
     <script>
         "use strict";
         document.onmousemove = function (){
-            document.getElementsByTagName('body')[0].insertAdjacentHTML('beforeEnd', '<img src="img/cursor.png" alt="cursor" id="cursor">');
+            document.getElementsByTagName('body')[0].insertAdjacentHTML('beforeEnd', '<img src="img/cursor1.png" alt="cursor" id="cursor">');
             var cursor = document.getElementById('cursor');
             cursor.style.position = 'fixed';
  
@@ -159,7 +236,6 @@
         let counter = 0;
         $(function(){
             $(".addcomment").hide();
-            $(".buyblock").hide();
             $("#wimg1").hide();
             $("#wimg2").hide();
             $("#wimg3").hide();
@@ -171,16 +247,10 @@
         });
         function escapeBtn(btn) {
             $(".addcomment").hide(500);
-            $(".buyblock").hide(500);
         }
         function addCommentBtn(form) {
             $(function(){
                 $(".addcomment").show(500);
-            });
-        }
-        function buyBtn(btn) {
-            $(function(){
-                $(".buyblock").show(500);
             });
         }
         let slider = function(){
